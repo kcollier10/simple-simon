@@ -1,0 +1,43 @@
+body {
+    background-color: grey;
+}
+
+#simon {
+    font-family: 'Kalam', cursive;
+}
+
+#start {
+    font-family: 'Kalam', cursive;
+}
+
+.labels {
+    font-family: 'Kalam', cursive;
+}
+
+.round-display {
+    font-family: 'Kalam', cursive;
+}
+
+#top-left {
+    background-color: darkgreen;
+    width: 100px;
+    height: 100px;
+}
+
+#top-right {
+    background-color: darkred;
+    width: 100px;
+    height: 100px;
+}
+
+#bottom-left {
+    background-color: goldenrod;
+    width: 100px;
+    height: 100px;
+}
+
+#bottom-right {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
