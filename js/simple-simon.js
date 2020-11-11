@@ -1,3 +1,4 @@
+// establishing variables
 let order = [];
 let playerOrder = [];
 let flash;
@@ -10,6 +11,8 @@ let noise = true;
 let on = false;
 let win;
 
+
+// accessing HTML elements through the DOM
 let turnCounter = document.querySelector("#round");
 let topLeft = document.querySelector("#top-left");
 let topRight = document.querySelector("#top-right");
@@ -19,6 +22,8 @@ let powerButton = document.querySelector("#power");
 let startButton = document.querySelector("#start");
 let hardButton = document.querySelector("#hard-mode");
 
+
+// enables 'hard mode'
 hardButton.addEventListener('change', (event) => {
     if (hardButton.checked === true) {
         hard = true;
@@ -27,6 +32,7 @@ hardButton.addEventListener('change', (event) => {
     }
 });
 
+// enables the power
 powerButton.addEventListener('click', (event) => {
     if (powerButton.checked === true) {
         on = true;
@@ -39,12 +45,14 @@ powerButton.addEventListener('click', (event) => {
     }
 });
 
+// starts the game and triggers the play() function
 startButton.addEventListener('click', (event) => {
     if(on || win) {
         play();
     }
 });
 
+// the actual play function
 function play () {
     win = false;
     order = [];
@@ -60,7 +68,9 @@ function play () {
     computerTurn = true;
 
     intervalId = setInterval(gameTurn, 800);
-};
+}
+
+
 
 function gameTurn() {
     on = false;
@@ -189,13 +199,13 @@ function check () {
     if (playerOrder[playerOrder.length -1] !== order[playerOrder.length -1])
         good = false;
 
-    if (playerOrder.length === 20 && good) {
+    if (playerOrder.length === 5 && good) {
         winGame();
     }
 
     if (good === false) {
         flashColor();
-        turnCounter.innerHTML = ":((";
+        turnCounter.innerHTML = ":(( o no, try again!";
         setTimeout(() => {
             turnCounter.innerHTML = turn;
             clearColor();
@@ -226,7 +236,7 @@ function check () {
 
 function winGame () {
     flashColor();
-    turnCounter.innerHTML = ":))";
+    turnCounter.innerHTML = ":)) you did a smart!";
     on = false;
     win = true;
 }
