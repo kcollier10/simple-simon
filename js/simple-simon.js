@@ -1,4 +1,5 @@
-// establishing variables
+(function () {
+
 let order = [];
 let playerOrder = [];
 let flash;
@@ -240,3 +241,5 @@ function winGame () {
     on = false;
     win = true;
 }
+
+})();
